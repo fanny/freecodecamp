@@ -17,5 +17,5 @@ for challenge_item in challenge_itens:
     challenge_name = "{name}.{extension}".format(name=(href.split('/')[3]), extension=extension)
     filenames.append(challenge_name)
 
-for filename in filenames:
-    open(filename, 'w')
+for filename in filenames: 
+    open('../' + filename, 'w')
