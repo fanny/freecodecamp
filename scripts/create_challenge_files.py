@@ -1,6 +1,7 @@
 import mechanicalsoup
 import sys
 
+PATH = '../reponsive_web_design_certification/css-grid/'
 url = sys.argv[1]
 extension = sys.argv[2]
 
@@ -18,4 +19,4 @@ for challenge_item in challenge_itens:
     filenames.append(challenge_name)
 
 for filename in filenames: 
-    open('../' + filename, 'w')
+    open(PATH + filename, 'w')
