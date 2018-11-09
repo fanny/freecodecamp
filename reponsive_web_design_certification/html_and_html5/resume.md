@@ -86,7 +86,10 @@
     Definem um campo para receber entradas do usuário.
 - Atributos:
     `type`: define o tipo do input, caso definido como `text` define um campo de texto, quando definido
-    como `radio`, `checkbox`
+    como:
+        - `radio`: dão uma opção de resposta em relação a várias. Todos os botões devem ter o mesmo atributio `name`, selecionando um deles automaticamente irá desmarcar os outros. É sempre uma boa prática colocar os inputs envolvidos por uma label, de modo que o `for` dela aponte para o `id` do elemento, isso permite a algumas tecnologias criarem uma relação associativa, entre o `input` e a `label`.
+  
+        - `checkbox`:
     `placeholding`: define o texto exibido no plano de fundo do input, antes do usuário digitar alguma coisa. 
     `required`: define o campo como obrigatório.
 - Características:
