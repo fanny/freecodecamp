@@ -1,6 +1,7 @@
 `<!-- -->`
 - Uso:
     Definem os comentários em um arquivo html.
+`<!DOCTYPE>`: define a versão do html, no caso do `<!DOCTYPE html>` define a versão do html5. é importante colocar em uppercase, alguns browsers antigos não são case-sensitive.
 
 `<h1>, <h2>, <h3>, <h4>, <h5>, <h6> de header n`
 - Uso:
