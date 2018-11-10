@@ -1,14 +1,6 @@
 import mechanicalsoup
 import sys
 
-PATH = '../responsive_web_design_certification/css-grid/'
-URL = sys.argv[1]
-EXTENSION = sys.argv[2]
-
-browser = mechanicalsoup.StatefulBrowser()
-browser.open(URL)
-
-
 def _get_challenge_itens():
     page = browser.get_current_page()
     challenge_list = page.find("div", {"class": "intro-toc list-group"})
@@ -33,4 +25,10 @@ def create_files():
 
 
 if __name__ == '__main__':
+    PATH = '../responsive_web_design_certification/teste/'
+    URL = sys.argv[1]
+    EXTENSION = sys.argv[2]
+
+    browser = mechanicalsoup.StatefulBrowser()
+    browser.open(URL)
     create_files()
