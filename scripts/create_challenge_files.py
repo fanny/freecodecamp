@@ -1,22 +1,36 @@
 import mechanicalsoup
 import sys
 
-PATH = '../reponsive_web_design_certification/css-grid/'
-url = sys.argv[1]
-extension = sys.argv[2]
+PATH = '../responsive_web_design_certification/css-grid/'
+URL = sys.argv[1]
+EXTENSION = sys.argv[2]
 
 browser = mechanicalsoup.StatefulBrowser()
-browser.open(url)
+browser.open(URL)
 
-page = browser.get_current_page()
-challenge_list = page.find("div", {"class": "intro-toc list-group"})
-challenge_itens = challenge_list.find_all('a')
 
-filenames = []
-for challenge_item in challenge_itens:
-    href = challenge_item['href']
-    challenge_name = "{name}.{extension}".format(name=(href.split('/')[3]), extension=extension)
-    filenames.append(challenge_name)
+def _get_challenge_itens():
+    page = browser.get_current_page()
+    challenge_list = page.find("div", {"class": "intro-toc list-group"})
+    challenge_itens = challenge_list.find_all('a')
 
-for filename in filenames: 
-    open(PATH + filename, 'w')
+    return challenge_itens
+
+def _get_filenames():
+    filenames = []
+    challenge_itens = _get_challenge_itens()
+    for challenge_item in challenge_itens:
+        href = challenge_item['href']
+        challenge_name = "{name}.{extension}".format(name=(href.split('/')[3]), extension=EXTENSION)
+        filenames.append(challenge_name)
+
+    return filenames
+
+def create_files():
+    filenames = _get_filenames()
+    for filename in filenames: 
+        open(PATH + filename, 'w').close()
+
+
+if __name__ == '__main__':
+    create_files()
