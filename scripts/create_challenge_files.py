@@ -25,7 +25,7 @@ def create_files():
 
 
 if __name__ == '__main__':
-    PATH = '../responsive_web_design_certification/teste/'
+    PATH = '../javascript_algorithms_and_data_structures_certification/basic-javascript/'
     URL = sys.argv[1]
     EXTENSION = sys.argv[2]
 
